@@ -27,7 +27,7 @@ contract ProjectOffice {
         return proj;
     }
 
-    //Retrieving the value
+    //Retrieving the valuee
     function retrive() public view returns (Project memory) {
         return proj;
     }
