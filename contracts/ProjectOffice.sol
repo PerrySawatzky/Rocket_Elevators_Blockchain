@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "./ERC721.sol";
 
-contract ProjectOffice {
-    Project proj;
+contract ProjectOffice is ERC721 {
+    constructor() ERC721("ProjectOffice", "PROJECT") public {
+
+    }
+        Project proj;
     struct Project {
         uint64 elevator_shafts;
         uint64 controllers;
@@ -11,7 +14,6 @@ contract ProjectOffice {
         uint64 doors;
         uint64 displays;
     }
-
     //Calcul material base on input component
     function set(
         uint64 batteries,
@@ -31,4 +33,5 @@ contract ProjectOffice {
     function retrive() public view returns (Project memory) {
         return proj;
     }
+    
 }
