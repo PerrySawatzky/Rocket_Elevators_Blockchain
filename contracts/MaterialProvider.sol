@@ -6,8 +6,8 @@ import "./ERC721.sol";
 contract MaterialProvider is ERC721 {
 
     string[] public materials;
-    mapping(uint => MaterialsStruct) MaterialsStructs;
-    uint public orderCount;
+    mapping(uint64 => MaterialsStruct) MaterialsStructs;
+    uint64 public materialCount;
 
     uint64 public aluminumBars = 5;
     uint64 public stainlessSteelSheets = 10;
@@ -27,37 +27,37 @@ contract MaterialProvider is ERC721 {
     constructor() ERC721("MaterialProvider", "MATERIALPROVIDER") public {
     }
 
-    function mint(string memory _material, uint aluminumBars, uint stainlessSteelSheets, uint hardware, uint rubberBands, uint lightBulbs, uint displayLEDs) public returns (uint, uint, uint, uint, uint, uint) {
+    function mint(string memory _material, uint64 aluminumBars, uint64 stainlessSteelSheets, uint64 hardware, uint64 rubberBands, uint64 lightBulbs, uint64 displayLEDs) public returns (uint64, uint64, uint64, uint64, uint64, uint64) {
         materials.push(_material);
         uint _id = materials.length;
         _mint(msg.sender, _id);
     }
 
-        function getCountaluminumBars() view public returns (uint) {
-            return aluminumBars;
-        }
-        
-        function getCountstainlessSteelSheets() view public returns (uint) {
-            return stainlessSteelSheets;
-        }
-        
-        function getCountHardware() view public returns (uint) {
-            return hardware;
-        }
-        
-        function getCountRubberBands() view public returns (uint) {
-            return rubberBands;
-        }
-        
-        function getCountlightBulbs() view public returns (uint) {
-            return lightBulbs;
-        }
-        
-        function getCountDisplayLEDs() view public returns (uint) {
-            return displayLEDs;
-        }
+    function getCountaluminumBars() view public returns (uint64) {
+        return aluminumBars;
+    }
+    
+    function getCountstainlessSteelSheets() view public returns (uint64) {
+        return stainlessSteelSheets;
+    }
+    
+    function getCountHardware() view public returns (uint64) {
+        return hardware;
+    }
+    
+    function getCountRubberBands() view public returns (uint64) {
+        return rubberBands;
+    }
+    
+    function getCountlightBulbs() view public returns (uint64) {
+        return lightBulbs;
+    }
+    
+    function getCountDisplayLEDs() view public returns (uint64) {
+        return displayLEDs;
+    }
 
-        function getContractAddress()public view returns(address){
-            return address(this);
+    function getContractAddress()public view returns(address){
+        return address(this);
     }
 }
