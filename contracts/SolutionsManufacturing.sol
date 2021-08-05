@@ -3,11 +3,12 @@ pragma solidity >=0.5.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract SolutionManufacturing is ERC721 {
-
-    constructor() ERC721("SolutionsManufacturing", "SM") public {
+    
+    
+    
+    constructor() ERC721("SolutionsManufacturing", "SM") {
     }
 
-    
     
     uint public ElevatorCab = 0;
     uint public Doors = 0;
@@ -25,12 +26,10 @@ contract SolutionManufacturing is ERC721 {
         uint64 controlPanel;
         uint64 display;
     }
+    
     uint64 public productListCount = 0;
-    
     mapping(uint64 => Products) public products;
-    
     address public myAddress = address(this);
-    
     Products[] productList;
     
     
@@ -74,6 +73,8 @@ contract SolutionManufacturing is ERC721 {
         new_product.controller = nbController;
         new_product.controlPanel = nbControlPanel;
         new_product.display = nbDisplay;
+        uint _id = productList.length;
+        _mint(msg.sender, _id);
 
         //Pushing new Elevator to list
         productListCount++;
