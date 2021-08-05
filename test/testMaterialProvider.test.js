@@ -30,4 +30,18 @@ contract("MaterialProvider", (accounts) => {
         const name = await contract.name();
         assert.equal(name, "MaterialProvider");
     });
+    it("has a symbol", async() => {
+        const symbol = await contract.symbol();
+        assert.equal(symbol, "MATERIALPROVIDER");
+    });
+    // describe ("minting", async() => {
+    
+    //     it("creates a new token", async() => {
+    //         const result = await contract.mint('aluminumBars');
+    //         const totalSupply = await contract.totalSupply();
+    //         //SUCESS
+    //         assert.equal(totalSupply, 1);
+    //         console.log(result);
+    //     });
+    // });
 });
