@@ -1,8 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.0;
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol"
 
-contract SolutionManufacturing {
+contract SolutionManufacturing is ERC721 {
 
+    constructor() ERC721("SolutionsManufacturing", "SM") {
+
+    }
+
+    
+    
     uint public ElevatorCab = 0;
     uint public Doors = 0;
     uint public Controller = 0;
