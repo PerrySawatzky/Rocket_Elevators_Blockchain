@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 import {SOLUTIONS_MANUFACTURING_ADDRESS, SOLUTIONS_MANUFAFCTURING_ABI} from './config'
 
@@ -24,7 +18,6 @@ class App extends Component {
     const smList = new web3.eth.Contract(SOLUTIONS_MANUFAFCTURING_ABI, SOLUTIONS_MANUFACTURING_ADDRESS)
     this.setState({ smList })
     const createElevator = await smList.methods.createElevator(30, 30, 30, 30, 30, 30).call()
-    console.log("createElevator", createElevator);
     this.setState({ createElevator })
     console.log('createElevator: ', createElevator)
     console.log('smList: ', smList)
@@ -61,7 +54,8 @@ class App extends Component {
 
   render() {
   return (
-    <div className="container">
+      <div className="container">
+          <h1>Heyooo</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
             Amount of aluminiumBars:
