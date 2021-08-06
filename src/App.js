@@ -36,6 +36,7 @@ class App extends Component {
       rubberBands: '',
       lightBulbs: '',
       displayLEDs: '',
+      submitedElevators: 0
     };
     // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,9 +44,15 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
+    const submitedElevators =  this.state.smList.methods.createElevator(this.aluminiumBars.value, this.stainlessSteelSheets.value, this.hardware.value, this.rubberBands.value, this.lightBulbs.value, this.displayLEDs.value).call();
+    this.setState({ submitedElevators })
+    console.log("aluminiumBars: ", this.aluminiumBars.value)
+    submitedElevators.then((res) => {
+      console.log(res[0]);
+    })
     this.setState({ [event.target.name] : [event.target.value] });
+    
     this.state.smList.methods.createElevator(this.aluminiumBars.value, this.stainlessSteelSheets.value, this.hardware.value, this.rubberBands.value, this.lightBulbs.value, this.displayLEDs.value).send({ from: this.state.account })
-    submitedElevators = this.state.smList.methods.createElevator(this.aluminiumBars.value, this.stainlessSteelSheets.value, this.hardware.value, this.rubberBands.value, this.lightBulbs.value, this.displayLEDs.value).call();
   }
 
   
@@ -91,7 +98,7 @@ class App extends Component {
         <p>Control Panels: {this.state.createElevator[3]}</p>
         <p>Displays: {this.state.createElevator[4]}</p>
 
-        <p>Elevator Cabs : {}</p>
+        {/* <p>Elevator Cabs : {this.state.submitedElevators}</p> */}
       </div>
     );
   }
