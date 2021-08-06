@@ -29,20 +29,26 @@ class App extends Component {
     this.state = { 
       value: '',
       account: '',
-      createElevator: 0
+      createElevator: 0,
+      aluminiumBars: '',
+      stainlessSteelSheets: '',
+      hardware: '',
+      rubberBands: '',
+      lightBulbs: '',
+      displayLEDs: '',
     };
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleSubmit(event) {
+    event.preventDefault()
+    this.setState({ [event.target.name] : [event.target.value] });
+    this.state.smList.methods.createElevator(this.aluminiumBars.value, this.stainlessSteelSheets.value, this.hardware.value, this.rubberBands.value, this.lightBulbs.value, this.displayLEDs.value).send({ from: this.state.account })
+    submitedElevators = this.state.smList.methods.createElevator(this.aluminiumBars.value, this.stainlessSteelSheets.value, this.hardware.value, this.rubberBands.value, this.lightBulbs.value, this.displayLEDs.value).call();
   }
 
-  handleSubmit(event) {
-    this.setState({value: event.target.value});
-    
-  }
+  
 
   render() {
   return (
@@ -50,8 +56,29 @@ class App extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Amount of aluminiumBars:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name='aluminiumBars' ref={(input) => this.aluminiumBars = input} type="text" />
           </label>
+          <label>
+            Amount of stainlessSteelSheets:
+            <input name='stainlessSteelSheets' ref={(input) => this.stainlessSteelSheets = input} type="text"  />
+          </label>
+          <label>
+            Amount of hardware:
+            <input name='hardware' ref={(input) => this.hardware = input} type="text" />
+          </label>
+          <label>
+            Amount of rubberBands:
+            <input name='rubberBands' ref={(input) => this.rubberBands = input} type="text"  />
+          </label>
+          <label>
+            Amount of lightBulbs:
+            <input name='lightBulbs' ref={(input) => this.lightBulbs = input} type="text"  />
+          </label>
+          <label>
+            Amount of displayLEDs:
+            <input name='displayLEDs' ref={(input) => this.displayLEDs = input} type="text"  />
+          </label>
+          <input type="submit" value="Submit" />
         </form>
         
         
@@ -63,6 +90,8 @@ class App extends Component {
         <p>Controllers: {this.state.createElevator[2]}</p>
         <p>Control Panels: {this.state.createElevator[3]}</p>
         <p>Displays: {this.state.createElevator[4]}</p>
+
+        <p>Elevator Cabs : {}</p>
       </div>
     );
   }
