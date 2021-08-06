@@ -10,11 +10,11 @@ contract SolutionsManufacturing is ERC721 {
     }
 
     
-    uint public ElevatorCab = 0;
-    uint public Doors = 0;
-    uint public Controller = 0;
-    uint public ControlPanel = 0;
-    uint public Display = 0;
+    uint public ElevatorCab = 1;
+    uint public Doors = 1;
+    uint public Controller = 1;
+    uint public ControlPanel = 1;
+    uint public Display = 1;
     
     struct Products{
         

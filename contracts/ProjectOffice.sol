@@ -7,12 +7,12 @@ contract ProjectOffice is ERC721 {
     mapping(uint => ComponentStruct) componentStructs;
     uint public orderCount;
 
-    uint256 public Controllers = 0;
-    uint256 public Shafts = 0;
-    uint256 public Doors = 0;
-    uint256 public Buttons = 0;
-    uint256 public Displays = 0;
-    uint256 public Speakers = 0;
+    uint256 public Controllers = 1;
+    uint256 public Shafts = 1;
+    uint256 public Doors = 1;
+    uint256 public Buttons = 1;
+    uint256 public Displays = 1;
+    uint256 public Speakers = 1;
 
    // List of components
     struct ComponentStruct {
@@ -32,7 +32,7 @@ contract ProjectOffice is ERC721 {
         _mint(msg.sender, _id);
 
 
-        uint totalColumns = columns* batteries;
+        uint totalColumns = columns * batteries;
         uint totalElevators = elevators*totalColumns;
         uint id = orderCount++;
 
