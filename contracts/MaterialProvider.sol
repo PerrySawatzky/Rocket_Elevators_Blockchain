@@ -32,12 +32,12 @@ contract MaterialProvider is ERC721 {
     function createMaterials(uint amountOfShafts, uint amountOfControllers, uint amountOfDoors, uint amountOfButtons, uint amountOfDisplays) public returns (uint,uint,uint,uint,uint,uint){
         Materials memory newMaterial;
 
-        newMaterial.aluminiumBars = amountOfShafts*16;
-        newMaterial.stainlessSteelSheets = amountOfShafts*4 + amountOfDoors;
-        newMaterial.hardware = amountOfDoors*2;
-        newMaterial.rubberBands = amountOfDoors*2;
-        newMaterial.lighBulbs = amountOfShafts*8;
-        newMaterial.displayLeds = amountOfButtons + amountOfDisplays + amountOfControllers;
+        newMaterial.aluminiumBars = amountOfShafts * 16;
+        newMaterial.stainlessSteelSheets = amountOfDoors + amountOfShafts * 4;
+        newMaterial.hardware = amountOfDoors * 2;
+        newMaterial.rubberBands = amountOfDoors * 2;
+        newMaterial.lighBulbs = amountOfShafts * 8;
+        newMaterial.displayLeds = amountOfControllers +amountOfDisplays + amountOfButtons;
 
         aluminiumBars = newMaterial.aluminiumBars;
         stainlessSteelSheets = newMaterial.stainlessSteelSheets;
