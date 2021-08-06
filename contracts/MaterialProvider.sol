@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract MaterialProvider is ERC721 {
 
-    constructor() ERC721("MaterialProvider", "MATERIALPROVIDER") {
+    constructor() ERC721("MaterialProvider", "MP") {
     }
 
     uint public aluminiumBars = 0;
