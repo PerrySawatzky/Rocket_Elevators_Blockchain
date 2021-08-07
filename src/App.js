@@ -48,7 +48,7 @@ class App extends Component {
     this.setState({ submitedElevators })
     console.log("aluminiumBars: ", this.aluminiumBars.value)
     submitedElevators.then((res) => {
-      console.log(res[0]);
+      console.log(res);
     })
     this.setState({ [event.target.name] : [event.target.value] });
     
@@ -60,45 +60,36 @@ class App extends Component {
   render() {
   return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Amount of aluminiumBars:
-            <input name='aluminiumBars' ref={(input) => this.aluminiumBars = input} type="text" />
-          </label>
-          <label>
-            Amount of stainlessSteelSheets:
-            <input name='stainlessSteelSheets' ref={(input) => this.stainlessSteelSheets = input} type="text"  />
-          </label>
-          <label>
-            Amount of hardware:
-            <input name='hardware' ref={(input) => this.hardware = input} type="text" />
-          </label>
-          <label>
-            Amount of rubberBands:
-            <input name='rubberBands' ref={(input) => this.rubberBands = input} type="text"  />
-          </label>
-          <label>
-            Amount of lightBulbs:
-            <input name='lightBulbs' ref={(input) => this.lightBulbs = input} type="text"  />
-          </label>
-          <label>
-            Amount of displayLEDs:
-            <input name='displayLEDs' ref={(input) => this.displayLEDs = input} type="text"  />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        
-        
-        
-        <h1>Your Account</h1>
-        <p>Your account: {this.state.account}</p>
-        <p>Elevator Cabs: {this.state.createElevator[0]}</p>
-        <p>Doors: {this.state.createElevator[1]}</p>
-        <p>Controllers: {this.state.createElevator[2]}</p>
-        <p>Control Panels: {this.state.createElevator[3]}</p>
-        <p>Displays: {this.state.createElevator[4]}</p>
-
-        {/* <p>Elevator Cabs : {this.state.submitedElevators}</p> */}
+        <h1>Solutions Manufacturing</h1>
+        <div className="container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-floating row mb-3">
+              <input className="form-control" id="input_aluminiumBars" name='aluminiumBars' ref={(input) => this.aluminiumBars = input} type="text" />
+              <label for="input_aluminiumBars">Amount of aluminiumBars: </label>
+            </div>
+            <div className="form-floating row mb-3">
+               <input className="form-control" id="input_stainlessSteelSheets" name='stainlessSteelSheets' ref={(input) => this.stainlessSteelSheets = input} type="text"  />
+              <label for="input_stainlessSteelSheets">Amount of stainlessSteelSheets: </label>
+            </div>
+            <div className="form-floating row mb-3">
+              <input className="form-control" id="input_hardware" name='hardware' ref={(input) => this.hardware = input} type="text" />
+              <label for="input_hardware">Amount of hardware: </label>
+            </div>
+            <div className="form-floating row mb-3">
+              <input className="form-control" id="input_rubberBands" name='rubberBands' ref={(input) => this.rubberBands = input} type="text"  />
+              <label for="input_rubberBands">Amount of rubberBands: </label>
+            </div>
+            <div className="form-floating row mb-3">
+              <input className="form-control" id="input_lightBulbs" name='lightBulbs' ref={(input) => this.lightBulbs = input} type="text"  />
+              <label for="input_lightBulbs">Amount of lightBulbs: </label>
+            </div>
+            <div className="form-floating row mb-3">
+              <input className="form-control" id="input_displayLEDs" name='displayLEDs' ref={(input) => this.displayLEDs = input} type="text"  />
+              <label for="input_displayLEDs">Amount of displayLEDs: </label>
+            </div>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     );
   }
