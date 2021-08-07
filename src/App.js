@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/NavBar';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import Home from './Pages'
+import projectoffice from './Pages/projectoffice';
+import materialprovider from './Pages/materialprovider';
+import solutionmanufacturing from './Pages/solutionmanufacturing';
+import quality from './Pages/quality';
+import freeeth from './Pages/freeeth';
 
-function App() {
+function App ()  {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={Home}></Route>
+        <Route path='/freeeth' exact component={freeeth}></Route>
+        <Route path='/office' component={projectoffice}></Route>
+        <Route path='/material' component={materialprovider}></Route>
+        <Route path='/solution' component={solutionmanufacturing}></Route>
+        <Route path='/quality' component={quality}></Route>
+      </Switch>
+    </Router>
   );
 }
 

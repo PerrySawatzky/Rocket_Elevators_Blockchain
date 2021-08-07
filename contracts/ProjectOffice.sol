@@ -1,34 +1,62 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "./ERC721.sol";
 
-contract ProjectOffice {
-    Project proj;
-    struct Project {
-        uint64 elevator_shafts;
-        uint64 controllers;
-        uint64 buttons;
-        uint64 doors;
-        uint64 displays;
+contract ProjectOffice is ERC721 {
+    string[] public projects;
+    mapping(uint => ComponentStruct) componentStructs;
+    uint public orderCount;
+
+    uint256 public Controllers = 0;
+    uint256 public Shafts = 0;
+    uint256 public Doors = 0;
+    uint256 public Buttons = 0;
+    uint256 public Displays = 0;
+    uint256 public Speakers = 0;
+
+   // List of components
+    struct ComponentStruct {
+        uint256 amountOfShafts;
+        uint256 amountOfControllers;
+        uint256 amountOfDoors;
+        uint256 amountOfButtons;
+        uint256 amountOfDisplays;
+        uint256 amountOfSpeakers;
+    }
+    constructor() ERC721("ProjectOffice", "PROJECT") public {
+    }
+    // function newOrder (uint batteries, uint columns, uint elevators, uint floors) public returns(uint,uint,uint,uint,uint,uint)
+    function orders(string memory _project, uint batteries, uint columns, uint elevators, uint floors) public returns(uint,uint,uint,uint,uint,uint) {
+        projects.push(_project);
+        uint _id = projects.length;
+        _mint(msg.sender, _id);
+
+
+        uint totalColumns = columns* batteries;
+        uint totalElevators = elevators*totalColumns;
+        uint id = orderCount++;
+
+        componentStructs[id].amountOfShafts = totalElevators;        
+        componentStructs[id].amountOfControllers = batteries;
+        componentStructs[id].amountOfDoors = totalElevators*2;
+        componentStructs[id].amountOfButtons = floors*totalElevators;
+        componentStructs[id].amountOfDisplays = floors+totalElevators;
+        componentStructs[id].amountOfSpeakers = (totalElevators*2)+floors;
+
+        Shafts = componentStructs[id].amountOfShafts;
+        Controllers = componentStructs[id].amountOfControllers;
+        Doors = componentStructs[id].amountOfDoors;
+        Buttons = componentStructs[id].amountOfButtons;
+        Displays = componentStructs[id].amountOfDisplays;
+        Speakers = componentStructs[id].amountOfSpeakers;
+
+        return (componentStructs[id].amountOfShafts,componentStructs[id].amountOfControllers,componentStructs[id].amountOfDoors,componentStructs[id].amountOfButtons,componentStructs[id].amountOfDisplays,componentStructs[id].amountOfSpeakers);
+        
+
     }
 
-    //Calcul material base on input component
-    function set(
-        uint64 batteries,
-        uint64 columns,
-        uint64 elevators,
-        uint64 floors
-    ) public returns (Project memory) {
-        proj.elevator_shafts = elevators;
-        proj.controllers = batteries;
-        proj.buttons = (floors * (floors - 1) * columns);
-        proj.doors = (elevators * floors * columns);
-        proj.displays = elevators;
-        return proj;
+    function getContractAddress()public view returns(address){
+        return address(this);
     }
-
-    //Retrieving the valuee
-    function retrive() public view returns (Project memory) {
-        return proj;
-    }
+    
 }
