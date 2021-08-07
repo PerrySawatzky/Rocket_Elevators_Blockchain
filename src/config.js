@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const PROJECT_OFFICE_ADDRESS = '0x93cC6114DF541B0Df05CB2443582Ca7E9D6C7C3C'
 export const SOLUTIONS_MANUFACTURING_ADDRESS = '0x21DE7915E3d5c1bCA23C966720966062b716093B'
 export const MATERIAL_PROVIDER_ADDRESS = '0x3A7b7dc42b7Df19f453058Ccb4b09dD697d8B210'
@@ -1672,10 +1671,6 @@ export const MATERIAL_PROVIDER_ABI = [
 ]
 
   export const QUALITY_ABI = [
-=======
-export const SOLUTIONS_MANUFACTURING_ADDRESS = '0x044230Fd7EB3516d8293A60e1f9935A348855Ddb'
-export const SOLUTIONS_MANUFAFCTURING_ABI = [
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     {
       "inputs": [],
       "stateMutability": "nonpayable",
@@ -1757,74 +1752,6 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
       "type": "event"
     },
     {
-<<<<<<< HEAD
-=======
-      "inputs": [],
-      "name": "ControlPanel",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "Controller",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "Display",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "Doors",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "ElevatorCab",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
       "inputs": [
         {
           "internalType": "address",
@@ -1859,12 +1786,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [
@@ -1883,12 +1806,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [
@@ -1912,25 +1831,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "myAddress",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [],
@@ -1943,12 +1845,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [
@@ -1967,74 +1865,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "productListCount",
-      "outputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        }
-      ],
-      "name": "products",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "productId",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "commandId",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "uint64",
-          "name": "elevatorCab",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "doors",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "controller",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "controlPanel",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "display",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [
@@ -2122,12 +1954,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [],
@@ -2140,12 +1968,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [
@@ -2164,12 +1988,8 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
         }
       ],
       "stateMutability": "view",
-<<<<<<< HEAD
       "type": "function",
       "constant": true
-=======
-      "type": "function"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
     },
     {
       "inputs": [
@@ -2197,7 +2017,6 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
     {
       "inputs": [
         {
-<<<<<<< HEAD
           "internalType": "string",
           "name": "doorTest",
           "type": "string"
@@ -2249,69 +2068,10 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
           "internalType": "string",
           "name": "",
           "type": "string"
-=======
-          "internalType": "uint64",
-          "name": "aluminiumBars",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "stainlessSteelSheets",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "hardware",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "rubberBands",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "lightBulbs",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "displayLEDs",
-          "type": "uint64"
-        }
-      ],
-      "name": "createElevator",
-      "outputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
         }
       ],
       "stateMutability": "nonpayable",
       "type": "function"
-<<<<<<< HEAD
     },
     {
       "inputs": [],
@@ -2358,7 +2118,3 @@ export const SOLUTIONS_MANUFAFCTURING_ABI = [
 
 
   
-=======
-    }
-  ]
->>>>>>> da2c891de55a476e934690c0ba7756435488af9d
