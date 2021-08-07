@@ -1,17 +1,30 @@
-main {
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-form {
-  width: 350px;
-  margin-bottom: 10px;
+
+h2 {
+  color: #000;
 }
 
-ul {
-  margin-bottom: 0px;
+h3{
+  color: #327ebd
 }
 
-#completedTaskList .content {
-  color: grey;
-  text-decoration: line-through;
+#Title {
+  position: absolute;
+  width: 465px;
+  height: 126px;
+  left: 109px;
+  top: 176px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
 }
